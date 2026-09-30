@@ -1,7 +1,5 @@
 package com.korai.study.ch04;
 
-import jdk.swing.interop.SwingInterOpUtils;
-
 import java.util.Arrays;
 
 public class ArrayMain04 {
