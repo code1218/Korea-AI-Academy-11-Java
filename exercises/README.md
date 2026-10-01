@@ -7,6 +7,7 @@
 | 순서 | 문서 | 복습 대상 수업 코드 | 실습 파일 |
 |---|---|---|---|
 | 1 | [ch01. 변수 · 클래스 · 제네릭](ch01_변수_클래스_제네릭.md) | `ch01/ClassMain` | `practice/ch01/Practice01.java` |
+| 1-2 | [ch01. 복습 문제 10선](ch01_복습문제_10.md) | `ch01/ClassMain` | `practice/ch01/Practice01B.java` |
 | 2 | [ch02. 함수(메서드)](ch02_함수.md) | `ch02/FunctionMain` | `practice/ch02/Practice02.java` |
 | 3 | [ch03-1. static과 클래스 로딩](ch03_static.md) | `ch03/MethodArea`, `ch03/Static*` | `practice/ch03/PracticeStatic.java` |
 | 4 | [ch03-2. 접근 제어자와 캡슐화](ch03_접근제어자.md) | `ch03/access/*` | `practice/ch03/access/PracticeAccess.java` |
