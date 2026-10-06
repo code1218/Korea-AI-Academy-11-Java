@@ -35,7 +35,12 @@ interface Sensor {
     }
 }
 
-abstract class RemoteControl implements Sensor {
+
+class Test {
+
+}
+
+abstract class RemoteControl extends Test implements Sensor {
     // 리모컨
     String modelName;
 
