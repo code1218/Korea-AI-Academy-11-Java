@@ -1,11 +1,12 @@
 package com.korai.study.ch10.TODO.view;
 
 import com.korai.study.ch10.TODO.config.SecurityConfig;
+import com.korai.study.ch10.TODO.router.RootRouter;
 import com.korai.study.ch10.TODO.service.UserService;
 
 import java.util.Scanner;
 
-public class LoginView {
+public class LoginView implements View {
 
     private UserService userService;
     private Scanner scanner;
@@ -15,6 +16,7 @@ public class LoginView {
         scanner = new Scanner(System.in);
     }
 
+    @Override
     public void show() {
         String username;
         String password;
@@ -35,6 +37,7 @@ public class LoginView {
 
         SecurityConfig.setLoginSession(token);
         System.out.println(String.format("로그인 성공. %s님 환영합니다.", username));
+        RootRouter.setCurrent("todo-list");
     }
 
 }
