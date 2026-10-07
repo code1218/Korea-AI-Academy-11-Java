@@ -24,7 +24,7 @@ public class TodoListView implements View {
     }
 
     private void printTodoList() {
-        if (todoService.getTodoList().size() == 0) {
+        if (todoService.getTodoList() == null) {
             System.out.println("등록된 할 일이 없습니다.");
             return;
         }
@@ -41,9 +41,9 @@ public class TodoListView implements View {
         System.out.print(">>> ");
         cmd = scanner.nextLine();
         if ("1".equals(cmd)) {
-
+            RootRouter.setCurrent("todo-register");
         } else if ("2".equals(cmd)) {
-
+            RootRouter.setCurrent("todo-status");
         } else if ("q".equals(cmd)) {
             RootRouter.setCurrent("login");
         } else {

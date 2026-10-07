@@ -21,4 +21,10 @@ public class SecurityConfig {
         String token = uuid + "@" + userId;
         return token;
     }
+
+    public static int getUserId() {
+        int startIndex = loginSession.indexOf("@") + 1;
+        String userIdStr = loginSession.substring(startIndex);
+        return Integer.parseInt(userIdStr);
+    }
 }

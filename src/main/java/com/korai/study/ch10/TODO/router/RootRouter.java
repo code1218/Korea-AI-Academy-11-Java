@@ -4,9 +4,7 @@ import com.korai.study.ch10.TODO.repository.TodoRepository;
 import com.korai.study.ch10.TODO.repository.UserRepository;
 import com.korai.study.ch10.TODO.service.TodoService;
 import com.korai.study.ch10.TODO.service.UserService;
-import com.korai.study.ch10.TODO.view.LoginView;
-import com.korai.study.ch10.TODO.view.TodoListView;
-import com.korai.study.ch10.TODO.view.View;
+import com.korai.study.ch10.TODO.view.*;
 
 import java.util.Map;
 
@@ -20,12 +18,17 @@ public class RootRouter {
         LoginView loginView = new LoginView(userService);
 
         TodoRepository todoRepository = new TodoRepository();
-        TodoService todoService = new TodoService(todoRepository);
+        TodoService todoService = new TodoService(todoRepository, userRepository);
         TodoListView todoListView = new TodoListView(todoService);
+
+        TodoRegisterView todoRegisterView = new TodoRegisterView(todoService);
+        TodoStatusView todoStatusView = new TodoStatusView(todoService);
 
         viewMap = Map.of(
                 "login", loginView,
-                "todo-list", todoListView
+                "todo-list", todoListView,
+                "todo-register", todoRegisterView,
+                "todo-status", todoStatusView
         );
     }
 

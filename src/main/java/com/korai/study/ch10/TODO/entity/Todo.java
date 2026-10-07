@@ -7,6 +7,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class Todo {
     private int id;
+    private TodoStatus status;
     private String content;
     private User user;
 }
