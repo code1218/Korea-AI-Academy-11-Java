@@ -13,7 +13,7 @@ public class ControlMain6 {
         while (true) {
             System.out.print("이름을 추가하시겠습니까? (y/n): ");
             String yesOrNo = scanner.nextLine();
-            if (yesOrNo.equalsIgnoreCase("y")) {
+            if ("y".equalsIgnoreCase(yesOrNo)) {
                 System.out.print("이름: ");
                 String name = scanner.nextLine();
 

@@ -1,6 +1,7 @@
 package com.korai.study.ch10.TODO.repository;
 
 import com.korai.study.ch10.TODO.entity.Todo;
+import com.korai.study.ch10.TODO.entity.TodoStatus;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -33,6 +34,14 @@ public class TodoRepository {
         return filteringTodos;
     }
 
+    public void updateStatus(int todoId, TodoStatus todoStatus) {
+        for (int i = 0; i < todos.size(); i++) {
+            if (todos.get(i).getId() == todoId) {
+                todos.get(i).setStatus(todoStatus);
+                break;
+            }
+        }
+    }
 
 }
 

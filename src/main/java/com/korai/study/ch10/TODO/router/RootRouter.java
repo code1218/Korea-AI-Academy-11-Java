@@ -14,13 +14,13 @@ public class RootRouter {
 
     public static void setUp() {
         UserRepository userRepository = new UserRepository();
-        UserService userService = new UserService(userRepository);
-        LoginView loginView = new LoginView(userService);
-
         TodoRepository todoRepository = new TodoRepository();
-        TodoService todoService = new TodoService(todoRepository, userRepository);
-        TodoListView todoListView = new TodoListView(todoService);
 
+        UserService userService = new UserService(userRepository);
+        TodoService todoService = new TodoService(todoRepository, userRepository);
+
+        LoginView loginView = new LoginView(userService);
+        TodoListView todoListView = new TodoListView(todoService);
         TodoRegisterView todoRegisterView = new TodoRegisterView(todoService);
         TodoStatusView todoStatusView = new TodoStatusView(todoService);
 

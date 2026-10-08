@@ -21,6 +21,13 @@ public class TodoStatusView implements View {
     @Override
     public void show() {
         System.out.println("[ TODO STATUS 변경 ]");
+        System.out.println("--------------------------------------");
+        if (selectedTodoId == 0) {
+            System.out.println("TODO를 선택하세요.");
+        } else {
+            System.out.printf("[todoId: %d] TODO를 선택하셨습니다.\n", selectedTodoId);
+        }
+        System.out.println("--------------------------------------");
         showSelectList();
     }
 
@@ -56,6 +63,11 @@ public class TodoStatusView implements View {
         selectedTodoId = todoId;
     }
 
+    private void modificationStatus(TodoStatus todoStatus) {
+        todoService.updateStatus(selectedTodoId, todoStatus);
+        System.out.printf("TODO ID[%d]: %s 상태변경완료\n", selectedTodoId, todoStatus.toString());
+    }
+
     private void showSelectList() {
         String cmd;
         System.out.println("1: TODO 선택하기");
@@ -66,14 +78,15 @@ public class TodoStatusView implements View {
         System.out.print(">>> ");
         cmd = scanner.nextLine();
         if ("1".equals(cmd)) {
-
+            selectedTodo();
         } else if ("2".equals(cmd)) {
-
+            modificationStatus(TodoStatus.todo);
         } else if ("3".equals(cmd)) {
-
+            modificationStatus(TodoStatus.inProgress);
         } else if ("4".equals(cmd)) {
-
+            modificationStatus(TodoStatus.done);
         } else if ("b".equals(cmd)) {
+            selectedTodoId = 0;
             RootRouter.setCurrent("todo-list");
         } else {
             System.out.println("다시 입력하세요.");

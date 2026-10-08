@@ -24,6 +24,10 @@ public class TodoService {
         Todo todo = new Todo(0, TodoStatus.todo, content, foundUser);
         todoRepository.insert(todo);
     }
+
+    public void updateStatus(int todoId, TodoStatus todoStatus) {
+        todoRepository.updateStatus(todoId, todoStatus);
+    }
 }
 
 

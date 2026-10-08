@@ -76,7 +76,5 @@ public class ControlMain3 {
             }
             System.out.println();
         }
-
-
     }
 }
