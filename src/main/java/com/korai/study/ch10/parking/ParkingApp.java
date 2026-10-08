@@ -6,7 +6,9 @@ import java.util.Scanner;
 public class ParkingApp {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         ParkingLot lot = new ParkingLot();
+
         boolean running = true;
 
         System.out.println("===== 코리아 주차장 =====");
