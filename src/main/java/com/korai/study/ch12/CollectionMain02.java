@@ -9,6 +9,8 @@ public class CollectionMain02 {
         list1.add("자바2");
         list1.add("자바3");
         System.out.println(list1);
+        System.out.println(list1.get(-1));
+//        list1.remove(1);
     }
 }
 
@@ -52,6 +54,17 @@ class CustomLinkedList<E> {
             tail = newNode;
         }
         size++;
+    }
+
+    public E get(int index) {
+        if (!(index < size && index > -1)) {
+            throw new IndexOutOfBoundsException("인덱스 범위를 초과하였습니다.");
+        }
+        Node<E> current = head;
+        for (int i = 0; i < index; i++){
+            current = current.next;
+        }
+        return current.item;
     }
 }
 
