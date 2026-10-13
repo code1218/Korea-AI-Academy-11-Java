@@ -32,6 +32,8 @@ public class TodoMain {
 class Todo {
     private int id;
     private String content;
+    private String name;
+    private int age;
 }
 
 // 기능을 추상화 할 때
@@ -115,6 +117,13 @@ class RegisterView implements View {
         System.out.print(">>> ");
         content = scanner.nextLine().trim();
         Todo newTodo = new Todo();
+        System.out.println("이름을 입력하세요. ");
+        System.out.print(">>> ");
+        newTodo.setName(scanner.nextLine().trim());
+        System.out.println("나이를 입력하세요. ");
+        System.out.print(">>> ");
+        newTodo.setAge(scanner.nextInt());
+        scanner.nextLine();
         newTodo.setContent(content);
         TodoRepository.getInstance().insert(newTodo);
         System.out.println("TODO 등록 완료.");
